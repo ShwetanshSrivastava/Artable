@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>114979996511-hg3bvopgor6g6ecfb3apsqk846jgoion.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.114979996511-hg3bvopgor6g6ecfb3apsqk846jgoion</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAwjIIzhE96--NFe0w19q2W_sUnlNkcxe4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>114979996511</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.shwetansh.Artable-eCommerce</string>
+	<key>PROJECT_ID</key>
+	<string>artable-cbc5a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>artable-cbc5a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:114979996511:ios:2ea644d484ec832eb52cea</string>
+	<key>DATABASE_URL</key>
+	<string>https://artable-cbc5a.firebaseio.com</string>
+</dict>
+</plist>
