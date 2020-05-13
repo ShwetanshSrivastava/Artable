@@ -24,7 +24,7 @@ class RoundTextField: UITextField {
     }
     
     @IBInspectable
-    var cornerRadius: CGFloat = 4.0 {
+    override var cornerRadius: CGFloat {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }

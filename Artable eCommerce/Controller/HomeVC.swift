@@ -108,7 +108,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         
         let width = view.frame.width
         let cellWidth = ( width - 70 ) / 3
-        let cellHeight = cellWidth * 1.5
+        let cellHeight = cellWidth * 1.4
         return CGSize(width: cellWidth, height: cellHeight)
     }
 }

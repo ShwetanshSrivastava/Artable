@@ -16,36 +16,55 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="animal_1" translatesAutoresizingMaskIntoConstraints="NO" id="VGZ-kG-dcM">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="161.5"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ygz-KN-HYR">
                         <rect key="frame" x="8" y="169.5" width="134" height="22.5"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-th-cqY">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="159.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SgW-j4-MG9">
+                                <rect key="frame" x="20" y="30" width="110" height="99.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SgW-j4-MG9" secondAttribute="trailing" constant="20" id="Btt-YM-HBt"/>
+                            <constraint firstItem="SgW-j4-MG9" firstAttribute="leading" secondItem="Rvo-th-cqY" secondAttribute="leading" constant="20" id="Sxy-m6-3TF"/>
+                            <constraint firstItem="SgW-j4-MG9" firstAttribute="top" secondItem="Rvo-th-cqY" secondAttribute="top" constant="30" id="l9W-ZR-pZR"/>
+                            <constraint firstAttribute="bottom" secondItem="SgW-j4-MG9" secondAttribute="bottom" constant="30" id="zXy-ZL-dbM"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Ygz-KN-HYR" secondAttribute="trailing" constant="8" id="5ay-xU-wVt"/>
-                <constraint firstItem="Ygz-KN-HYR" firstAttribute="top" secondItem="VGZ-kG-dcM" secondAttribute="bottom" constant="8" id="Bik-gy-4CG"/>
+                <constraint firstItem="Ygz-KN-HYR" firstAttribute="top" secondItem="Rvo-th-cqY" secondAttribute="bottom" constant="10" id="7xh-pI-b44"/>
+                <constraint firstItem="Rvo-th-cqY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Byh-o7-hhq"/>
                 <constraint firstItem="Ygz-KN-HYR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="D3O-WO-Z3Z"/>
-                <constraint firstAttribute="trailing" secondItem="VGZ-kG-dcM" secondAttribute="trailing" id="N3X-SR-6jR"/>
-                <constraint firstItem="VGZ-kG-dcM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="f3E-oT-9RH"/>
+                <constraint firstItem="Rvo-th-cqY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KiN-T3-knr"/>
+                <constraint firstAttribute="trailing" secondItem="Rvo-th-cqY" secondAttribute="trailing" id="QqG-T2-jYn"/>
                 <constraint firstAttribute="bottom" secondItem="Ygz-KN-HYR" secondAttribute="bottom" constant="8" id="hcF-2j-gmJ"/>
-                <constraint firstItem="VGZ-kG-dcM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iG6-uv-7hG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="catImg" destination="VGZ-kG-dcM" id="34G-Qh-VnT"/>
+                <outlet property="catImg" destination="SgW-j4-MG9" id="fz9-Kx-FZb"/>
                 <outlet property="catName" destination="Ygz-KN-HYR" id="d0X-js-uhu"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="animal_1" width="1500" height="1023"/>
-    </resources>
 </document>

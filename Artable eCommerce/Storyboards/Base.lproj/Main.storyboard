@@ -15,6 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twC-0K-VQ6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.27753103600000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qA0-le-zHd">
                                 <rect key="frame" x="20" y="88" width="374" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,7 +35,11 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qA0-le-zHd" secondAttribute="bottom" id="6zJ-MR-TE4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qA0-le-zHd" secondAttribute="trailing" constant="20" id="Jqu-QB-tw5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="twC-0K-VQ6" secondAttribute="trailing" id="ULm-vL-zzK"/>
                             <constraint firstItem="qA0-le-zHd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V2W-Zb-us0"/>
+                            <constraint firstItem="twC-0K-VQ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gxG-aY-bky"/>
+                            <constraint firstItem="twC-0K-VQ6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jIg-eZ-5LL"/>
+                            <constraint firstAttribute="bottom" secondItem="twC-0K-VQ6" secondAttribute="bottom" id="pSa-9O-3eY"/>
                             <constraint firstItem="qA0-le-zHd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yLd-RS-rRr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
