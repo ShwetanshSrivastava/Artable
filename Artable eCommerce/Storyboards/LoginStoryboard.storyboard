@@ -153,6 +153,9 @@
                             <constraint firstItem="bXy-jO-l14" firstAttribute="leading" secondItem="9sG-wp-wvC" secondAttribute="leading" id="rno-Dw-ztr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9sG-wp-wvC"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mg8-rp-1j4" appends="YES" id="56E-kH-xNX"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Nl2-3y-Zdr"/>
                     <connections>
@@ -162,6 +165,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="125-LV-vj1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Mg8-rp-1j4">
+                    <connections>
+                        <action selector="swipeGesture:" destination="fVH-M9-PJP" id="Zci-dD-ZUZ"/>
+                        <outlet property="delegate" destination="fVH-M9-PJP" id="3Fx-g9-YqY"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="569.56521739130437" y="34.821428571428569"/>
         </scene>

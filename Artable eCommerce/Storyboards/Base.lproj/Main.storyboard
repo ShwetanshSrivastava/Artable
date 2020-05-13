@@ -7,17 +7,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
+        <!--Artable-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Artable_eCommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qA0-le-zHd">
+                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iAg-rx-HIe">
+                                    <size key="itemSize" width="176" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qA0-le-zHd" secondAttribute="bottom" id="6zJ-MR-TE4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qA0-le-zHd" secondAttribute="trailing" constant="20" id="Jqu-QB-tw5"/>
+                            <constraint firstItem="qA0-le-zHd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V2W-Zb-us0"/>
+                            <constraint firstItem="qA0-le-zHd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yLd-RS-rRr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cn8-Yn-ECk">
+                    <navigationItem key="navigationItem" title="Artable" id="cn8-Yn-ECk">
                         <barButtonItem key="leftBarButtonItem" title="Login" id="35u-hY-Gaz">
                             <connections>
                                 <action selector="logInOutBtn:" destination="BYZ-38-t0r" id="5j3-Fv-bfY"/>
@@ -25,6 +44,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="qA0-le-zHd" id="ZON-sR-PmZ"/>
                         <outlet property="logInOutBtn" destination="35u-hY-Gaz" id="gFR-tN-pEc"/>
                     </connections>
                 </viewController>

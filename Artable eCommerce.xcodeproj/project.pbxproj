@@ -29,6 +29,12 @@
 		CD717194246ABCEE00AD0487 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD717192246ABCEE00AD0487 /* ForgotPasswordVC.swift */; };
 		CD717195246ABCEE00AD0487 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD717193246ABCEE00AD0487 /* ForgotPasswordVC.xib */; };
 		CD9AEC7D246A92C900269269 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9AEC7C246A92C900269269 /* RoundedViews.swift */; };
+		CDB00A07246AD41200E1554C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB00A06246AD41200E1554C /* Category.swift */; };
+		CDB00A08246AD41200E1554C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB00A06246AD41200E1554C /* Category.swift */; };
+		CDB00A0B246AD4C600E1554C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB00A09246AD4C600E1554C /* CategoryCell.swift */; };
+		CDB00A0C246AD4C600E1554C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB00A09246AD4C600E1554C /* CategoryCell.swift */; };
+		CDB00A0D246AD4C600E1554C /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB00A0A246AD4C600E1554C /* CategoryCell.xib */; };
+		CDB00A0E246AD4C600E1554C /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB00A0A246AD4C600E1554C /* CategoryCell.xib */; };
 		CDE5D6452467E65D00876F71 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDE5D6442467E65D00876F71 /* LoginStoryboard.storyboard */; };
 		CDE5D6472468033100876F71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE5D6462468033100876F71 /* GoogleService-Info.plist */; };
 		E8B08E87BEED2D2CBEFE14FA /* Pods_Artable_eCommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2C318122613F68EB7C10D4 /* Pods_Artable_eCommerce.framework */; };
@@ -63,6 +69,9 @@
 		CD717192246ABCEE00AD0487 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		CD717193246ABCEE00AD0487 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		CD9AEC7C246A92C900269269 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		CDB00A06246AD41200E1554C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CDB00A09246AD4C600E1554C /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		CDB00A0A246AD4C600E1554C /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		CDE5D6442467E65D00876F71 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		CDE5D6462468033100876F71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7CDBA6AF20E76DE50E7F0DD /* Pods-Artable eCommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable eCommerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-Artable eCommerce/Pods-Artable eCommerce.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +162,7 @@
 		CD65B90323F722D000DC09A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD717192246ABCEE00AD0487 /* ForgotPasswordVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +195,8 @@
 		CD65B91D23F7234E00DC09A9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CDB00A0F246AD4E000E1554C /* Xibs */,
+				CDB00A05246AD3F200E1554C /* Model */,
 				CD9AEC7B246A913500269269 /* View */,
 				CD4265B024686EE000193A61 /* Utils */,
 				CD65B8F723F722A500DC09A9 /* Assets.xcassets */,
@@ -195,7 +207,6 @@
 		CD717191246ABCA300AD0487 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				CD717192246ABCEE00AD0487 /* ForgotPasswordVC.swift */,
 				CD717193246ABCEE00AD0487 /* ForgotPasswordVC.xib */,
 			);
 			path = XIBs;
@@ -207,8 +218,25 @@
 				CD4265B5246877FD00193A61 /* RoundButton.swift */,
 				CD4265B724687B6B00193A61 /* RoundTextField.swift */,
 				CD9AEC7C246A92C900269269 /* RoundedViews.swift */,
+				CDB00A09246AD4C600E1554C /* CategoryCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CDB00A05246AD3F200E1554C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDB00A06246AD41200E1554C /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CDB00A0F246AD4E000E1554C /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				CDB00A0A246AD4C600E1554C /* CategoryCell.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		F06D3873C0867117D171A59C /* Frameworks */ = {
@@ -315,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD65B8FB23F722A500DC09A9 /* LaunchScreen.storyboard in Resources */,
+				CDB00A0D246AD4C600E1554C /* CategoryCell.xib in Resources */,
 				CD65B8F823F722A500DC09A9 /* Assets.xcassets in Resources */,
 				CDE5D6472468033100876F71 /* GoogleService-Info.plist in Resources */,
 				CD65B8F623F722A300DC09A9 /* Main.storyboard in Resources */,
@@ -330,6 +359,7 @@
 				CD65B91823F7233900DC09A9 /* LaunchScreen.storyboard in Resources */,
 				CD65B91E23F7237700DC09A9 /* Assets.xcassets in Resources */,
 				CD65B91323F7233700DC09A9 /* Main.storyboard in Resources */,
+				CDB00A0E246AD4C600E1554C /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB00A0B246AD4C600E1554C /* CategoryCell.swift in Sources */,
 				CD4265B6246877FD00193A61 /* RoundButton.swift in Sources */,
 				CD65B8F323F722A300DC09A9 /* HomeVC.swift in Sources */,
 				CD9AEC7D246A92C900269269 /* RoundedViews.swift in Sources */,
@@ -424,6 +455,7 @@
 				CD65B8F123F722A300DC09A9 /* SceneDelegate.swift in Sources */,
 				CD4265B824687B6B00193A61 /* RoundTextField.swift in Sources */,
 				CD4265A624680F8500193A61 /* RegisterVC.swift in Sources */,
+				CDB00A07246AD41200E1554C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +466,8 @@
 				CD65B91023F7233700DC09A9 /* ViewController.swift in Sources */,
 				CD65B90C23F7233700DC09A9 /* AppDelegate.swift in Sources */,
 				CD65B90E23F7233700DC09A9 /* SceneDelegate.swift in Sources */,
+				CDB00A08246AD41200E1554C /* Category.swift in Sources */,
+				CDB00A0C246AD4C600E1554C /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +631,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U9YKLAHM35;
 				INFOPLIST_FILE = "Artable eCommerce/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -617,7 +651,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U9YKLAHM35;
 				INFOPLIST_FILE = "Artable eCommerce/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
