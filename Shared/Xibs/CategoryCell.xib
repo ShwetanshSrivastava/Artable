@@ -16,43 +16,57 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ygz-KN-HYR">
-                        <rect key="frame" x="8" y="169.5" width="134" height="22.5"/>
-                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                        <color key="textColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-th-cqY">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="159.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7K-Og-HAh">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SgW-j4-MG9">
-                                <rect key="frame" x="20" y="30" width="110" height="99.5"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgF-dI-g0r">
+                                <rect key="frame" x="5" y="10" width="140" height="149"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal_3" translatesAutoresizingMaskIntoConstraints="NO" id="ORl-Eq-KUn">
+                                        <rect key="frame" x="20" y="20" width="100" height="109"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ORl-Eq-KUn" secondAttribute="bottom" constant="20" id="fbr-vp-kKJ"/>
+                                    <constraint firstItem="ORl-Eq-KUn" firstAttribute="top" secondItem="DgF-dI-g0r" secondAttribute="top" constant="20" id="hiG-xa-vGW"/>
+                                    <constraint firstItem="ORl-Eq-KUn" firstAttribute="leading" secondItem="DgF-dI-g0r" secondAttribute="leading" constant="20" id="s2j-dD-Adt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ORl-Eq-KUn" secondAttribute="trailing" constant="20" id="wcD-eD-Ew9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-eQ-Nlc">
+                                <rect key="frame" x="54" y="169" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="suV-AH-Hzf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="SgW-j4-MG9" secondAttribute="trailing" constant="20" id="Btt-YM-HBt"/>
-                            <constraint firstItem="SgW-j4-MG9" firstAttribute="leading" secondItem="Rvo-th-cqY" secondAttribute="leading" constant="20" id="Sxy-m6-3TF"/>
-                            <constraint firstItem="SgW-j4-MG9" firstAttribute="top" secondItem="Rvo-th-cqY" secondAttribute="top" constant="30" id="l9W-ZR-pZR"/>
-                            <constraint firstAttribute="bottom" secondItem="SgW-j4-MG9" secondAttribute="bottom" constant="30" id="zXy-ZL-dbM"/>
+                            <constraint firstAttribute="bottom" secondItem="eh5-eQ-Nlc" secondAttribute="bottom" constant="10" id="8LN-3c-kze"/>
+                            <constraint firstItem="DgF-dI-g0r" firstAttribute="top" secondItem="H7K-Og-HAh" secondAttribute="top" constant="10" id="AR5-LE-uE5"/>
+                            <constraint firstAttribute="trailing" secondItem="DgF-dI-g0r" secondAttribute="trailing" constant="5" id="GEp-Pk-Ylu"/>
+                            <constraint firstItem="eh5-eQ-Nlc" firstAttribute="top" secondItem="DgF-dI-g0r" secondAttribute="bottom" constant="10" id="VvF-8V-jk6"/>
+                            <constraint firstItem="DgF-dI-g0r" firstAttribute="leading" secondItem="H7K-Og-HAh" secondAttribute="leading" constant="5" id="e9I-gS-gvh"/>
+                            <constraint firstItem="eh5-eQ-Nlc" firstAttribute="centerX" secondItem="H7K-Og-HAh" secondAttribute="centerX" id="n5t-bc-lD9"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="20"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Ygz-KN-HYR" secondAttribute="trailing" constant="8" id="5ay-xU-wVt"/>
-                <constraint firstItem="Ygz-KN-HYR" firstAttribute="top" secondItem="Rvo-th-cqY" secondAttribute="bottom" constant="10" id="7xh-pI-b44"/>
-                <constraint firstItem="Rvo-th-cqY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Byh-o7-hhq"/>
-                <constraint firstItem="Ygz-KN-HYR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="D3O-WO-Z3Z"/>
-                <constraint firstItem="Rvo-th-cqY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KiN-T3-knr"/>
-                <constraint firstAttribute="trailing" secondItem="Rvo-th-cqY" secondAttribute="trailing" id="QqG-T2-jYn"/>
-                <constraint firstAttribute="bottom" secondItem="Ygz-KN-HYR" secondAttribute="bottom" constant="8" id="hcF-2j-gmJ"/>
+                <constraint firstAttribute="trailing" secondItem="H7K-Og-HAh" secondAttribute="trailing" id="Sww-eO-KM9"/>
+                <constraint firstAttribute="bottom" secondItem="H7K-Og-HAh" secondAttribute="bottom" id="mqo-Vg-S8n"/>
+                <constraint firstItem="H7K-Og-HAh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="muf-KX-UVo"/>
+                <constraint firstItem="H7K-Og-HAh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sZx-44-M7g"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <userDefinedRuntimeAttributes>
@@ -61,10 +75,13 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="catImg" destination="SgW-j4-MG9" id="fz9-Kx-FZb"/>
-                <outlet property="catName" destination="Ygz-KN-HYR" id="d0X-js-uhu"/>
+                <outlet property="catImg" destination="ORl-Eq-KUn" id="Q6x-23-ZJe"/>
+                <outlet property="catName" destination="eh5-eQ-Nlc" id="iMt-sh-LRz"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="animal_3" width="1920" height="1080"/>
+    </resources>
 </document>

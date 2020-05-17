@@ -20,11 +20,12 @@ class HomeVC: UIViewController {
     //MARK: - variables
     
     var categories = [Category]()
+    var selectedCategory: Category!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let category = Category(name: "Nature", id: "asas", imgUrl: "https://images.unsplash.com/photo-1543183344-acd290d5142e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", isActive: true, timestamp: Timestamp())
+        let category = Category(name: "Nature", id: "asas", imgUrl: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80", isActive: true, timestamp: Timestamp())
         
         categories.append(category)
         categories.append(category)
@@ -80,12 +81,23 @@ class HomeVC: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.ToProducts {
+            if let destinationVC = segue.destination as? ProductsVC {
+                destinationVC.category = selectedCategory
+            }
+        }
+    }
 }
 
 //MARK: - Delegates
 
 extension HomeVC: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCategory = categories[indexPath.item]
+        performSegue(withIdentifier: Segues.ToProducts, sender: self)
+    }
 }
 
 //MARK: - Datasources
@@ -108,7 +120,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         
         let width = view.frame.width
         let cellWidth = ( width - 70 ) / 3
-        let cellHeight = cellWidth * 1.4
+        let cellHeight = cellWidth * 1.3
         return CGSize(width: cellWidth, height: cellHeight)
     }
 }

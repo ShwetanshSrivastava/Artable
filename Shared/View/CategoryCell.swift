@@ -21,7 +21,11 @@ class CategoryCell: UICollectionViewCell {
     func configureCell(category: Category) {
         catName.text = category.name
         if let url = URL(string: category.imgUrl) {
-            catImg.kf.setImage(with: url)
+
+            catImg.kf.indicatorType = .activity
+            let options: KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.1))]
+            catImg.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"), options: options)
+
         }
     }
 }
