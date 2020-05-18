@@ -21,30 +21,22 @@ class HomeVC: UIViewController {
     
     var categories = [Category]()
     var selectedCategory: Category!
+    var db: Firestore!
+    var listener: ListenerRegistration!
+    
+    //MARK: - LifeCycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
         
-        let category = Category(name: "Nature", id: "asas", imgUrl: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80", isActive: true, timestamp: Timestamp())
-        
-        categories.append(category)
-        categories.append(category)
-        categories.append(category)
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: Identifiers.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCell)
-        
-        if Auth.auth().currentUser == nil {
-            Auth.auth().signInAnonymously { (result, error) in
-                if let error = error {
-                    self.alert(title: "Error", message: error.localizedDescription, options: "Ok", completion: nil)
-                }
-            }
-        }
+        setupCollectionView()
+        setupInitialAnonymousUser()
+        setupNavigationBar()
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        setCategoriesListener()
         if let user = Auth.auth().currentUser, !user.isAnonymous{
             // logged in
             logInOutBtn.title = "Logout"
@@ -52,15 +44,12 @@ class HomeVC: UIViewController {
             logInOutBtn.title = "Login"
         }
     }
-
-    func presentLoginController() {
-        
-        let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardId.LoginVC)
-        controller.modalPresentationStyle = .fullScreen
-        present(controller,animated: true,completion: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+        listener.remove()
+        categories.removeAll()
+        collectionView.reloadData()
     }
-    
+        
     //MARK: - IBActions
     @IBAction func logInOutBtn(_ sender: UIBarButtonItem) {
         guard let user = Auth.auth().currentUser else { return }
@@ -89,6 +78,37 @@ class HomeVC: UIViewController {
             }
         }
     }
+    
+    //MARK: - Methods
+    
+    func presentLoginController() {
+        
+        let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardId.LoginVC)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller,animated: true,completion: nil)
+    }
+    
+    func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: Identifiers.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCell)
+    }
+    
+    func setupInitialAnonymousUser() {
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously { (result, error) in
+                if let error = error {
+                    self.alert(title: "Error", message: error.localizedDescription, options: "Ok", completion: nil)
+                }
+            }
+        }
+    }
+    func setupNavigationBar() {
+        guard let font = UIFont(name: "futura", size: 26) else { return }
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: font]
+    }
+    
 }
 
 //MARK: - Delegates
@@ -122,5 +142,105 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         let cellWidth = ( width - 70 ) / 3
         let cellHeight = cellWidth * 1.3
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+}
+
+//MARK: - Firebase Extension
+
+extension HomeVC {
+    
+    func setCategoriesListener() {
+        listener = db.categories.addSnapshotListener({ (snap, error) in
+            if let error = error {
+                self.alert(title: "Error", message: error.localizedDescription, options: "Ok", completion: nil)
+                return
+            }
+            
+            snap?.documentChanges.forEach({ (change) in
+                
+                let data = change.document.data()
+                let category = Category(data: data)
+                switch change.type {
+                case .added:
+                    self.onDocumentAdded(change: change, category: category)
+                case .modified:
+                    self.onDocumentModified(change: change, category: category)
+                case .removed:
+                    self.onDocumentRemove(change: change)
+                }
+            })
+        })
+    }
+    
+    func onDocumentAdded(change: DocumentChange, category: Category) {
+         let newIndex = Int(change.newIndex)
+         categories.insert(category, at: newIndex)
+         collectionView.insertItems(at: [IndexPath(item: newIndex, section: 0)])
+     }
+     
+     func onDocumentModified(change: DocumentChange, category: Category) {
+         if change.newIndex == change.oldIndex {
+             let index = Int(change.newIndex)
+             categories[index] = category
+             collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+         } else {
+             let oldIndex = Int(change.oldIndex)
+             let newIndex = Int(change.newIndex)
+             categories.remove(at: oldIndex)
+             categories.insert(category, at: newIndex)
+             collectionView.moveItem(at: IndexPath(item: oldIndex, section: 0), to: IndexPath(item: newIndex, section: 0))
+         }
+     }
+     
+     func onDocumentRemove(change: DocumentChange) {
+         let oldIndex = Int(change.oldIndex)
+         categories.remove(at: oldIndex)
+         collectionView.deleteItems(at: [IndexPath(item: oldIndex , section: 0)])
+     }
+}
+
+
+
+//MARK: - Prior test code -
+
+extension HomeVC {
+    
+    private func fetchDocument() {
+        let docRef = db.collection("categories").document("VmQfeT5reNpv2nOnXIag")
+        docRef.getDocument { (snap, error) in
+            guard let data = snap?.data() else { return }
+
+            let newCategory = Category(data: data)
+            self.categories.append(newCategory)
+            self.collectionView.reloadData()
+        }
+    }
+
+    private func fetchDocuments() {
+        let collectionRef = db.collection("categories")
+        listener = collectionRef.addSnapshotListener { (snap, error) in
+            guard let documents = snap?.documents else { return }
+            self.categories.removeAll()
+            for document in documents {
+                let data = document.data()
+                let newCategory = Category.init(data: data)
+                self.categories.append(newCategory)
+            }
+            self.collectionView.reloadData()
+        }
+    }
+
+    private func fetchCollection() {
+        let collectionRef = db.collection("categories")
+
+            collectionRef.getDocuments { (snap, error) in
+            guard let documents = snap?.documents else { return }
+            for document in documents {
+                let data = document.data()
+                let newCategory = Category.init(data: data)
+                self.categories.append(newCategory)
+            }
+            self.collectionView.reloadData()
+        }
     }
 }

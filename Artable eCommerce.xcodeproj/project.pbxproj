@@ -43,6 +43,8 @@
 		CDB00A0C246AD4C600E1554C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB00A09246AD4C600E1554C /* CategoryCell.swift */; };
 		CDB00A0D246AD4C600E1554C /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB00A0A246AD4C600E1554C /* CategoryCell.xib */; };
 		CDB00A0E246AD4C600E1554C /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB00A0A246AD4C600E1554C /* CategoryCell.xib */; };
+		CDC4723C2472B0B500F3B217 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4723B2472B0B500F3B217 /* FirebaseUtils.swift */; };
+		CDC4723D2472B0B500F3B217 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4723B2472B0B500F3B217 /* FirebaseUtils.swift */; };
 		CDE5D6452467E65D00876F71 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDE5D6442467E65D00876F71 /* LoginStoryboard.storyboard */; };
 		CDE5D6472468033100876F71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE5D6462468033100876F71 /* GoogleService-Info.plist */; };
 		E8B08E87BEED2D2CBEFE14FA /* Pods_Artable_eCommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2C318122613F68EB7C10D4 /* Pods_Artable_eCommerce.framework */; };
@@ -84,6 +86,7 @@
 		CDB00A06246AD41200E1554C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CDB00A09246AD4C600E1554C /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		CDB00A0A246AD4C600E1554C /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		CDC4723B2472B0B500F3B217 /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		CDE5D6442467E65D00876F71 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		CDE5D6462468033100876F71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7CDBA6AF20E76DE50E7F0DD /* Pods-Artable eCommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable eCommerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-Artable eCommerce/Pods-Artable eCommerce.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 			children = (
 				CD4265B1246871F800193A61 /* Extensions.swift */,
 				CD4265B32468723300193A61 /* Constants.swift */,
+				CDC4723B2472B0B500F3B217 /* FirebaseUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -466,6 +470,7 @@
 				CD60559A246C76270097FB81 /* Product.swift in Sources */,
 				CD65B8F323F722A300DC09A9 /* HomeVC.swift in Sources */,
 				CD9AEC7D246A92C900269269 /* RoundedViews.swift in Sources */,
+				CDC4723C2472B0B500F3B217 /* FirebaseUtils.swift in Sources */,
 				CD605597246C75D10097FB81 /* ProductsVC.swift in Sources */,
 				CD717194246ABCEE00AD0487 /* ForgotPasswordVC.swift in Sources */,
 				CD65B8EF23F722A300DC09A9 /* AppDelegate.swift in Sources */,
@@ -484,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC4723D2472B0B500F3B217 /* FirebaseUtils.swift in Sources */,
 				CD65B91023F7233700DC09A9 /* ViewController.swift in Sources */,
 				CD65B90C23F7233700DC09A9 /* AppDelegate.swift in Sources */,
 				CD605598246C75D10097FB81 /* ProductsVC.swift in Sources */,
